@@ -38,9 +38,8 @@ const text = [
 ]
 
 
-const containerLeft = document.querySelector (".container-left");
-const containerImg = document.querySelectorAll (".container-img");
-const scritteImg = document.querySelectorAll (".scritte");
+const containerLeft = document.querySelector (".container .container-left");
+const containerImg = document.querySelectorAll (".container-left .container-img");
 const containerRight = document.querySelectorAll (".container-right");
 const filterImg = document.querySelectorAll('.container-right img');
 containerImg[0].classList.add ("active", "first");
@@ -50,8 +49,10 @@ for (i=0 ; i<=title.length-1; i++) {
     let image = `<img src="${items[i]}" alt="">`;
     let h1 = `<h1>${title[i]}</h1>`;
     let paragraph = `<p>${text[i]}</p>`;
-    scritteImg[i].innerHTML = scritteImg[i].innerHTML + h1 + paragraph;
+    let scritte = `<div class="scritte"> ${h1} ${paragraph} </div>`
+    console.log(scritte);
     containerImg[i].innerHTML += image;
+    containerImg[i].innerHTML += scritte;
 }
 
 const nextButton = document.querySelector('.botton-down');
