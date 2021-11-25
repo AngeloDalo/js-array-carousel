@@ -1,3 +1,10 @@
+/**
+ * MILESTONE 1: markup statico: immagine e thumbnails
+ * MILESTONE 2: rimuovere markup statico e inserire elementi dinamicamente
+ * MILESTONE 3: uso click freccie
+ * BONUS: ciclo infinito
+ */
+
 const items = [
     'img/01.jpg',
     'img/02.jpg',
