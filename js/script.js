@@ -13,6 +13,14 @@ const items = [
     'img/05.jpg'
 ];
 
+const items2 = [
+    'img/01.jpg',
+    'img/02.jpg',
+    'img/03.jpg',
+    'img/04.jpg',
+    'img/05.jpg'
+];
+
 const title = [
     'Svezia',
     'Svizzera',
@@ -32,10 +40,62 @@ const text = [
 
 const containerLeft = document.querySelector (".container-left");
 const containerImg = document.querySelectorAll (".container-img");
-containerImg[0].classList.add ("active");
+const scritteImg = document.querySelectorAll (".scritte");
+const containerRight = document.querySelectorAll (".container-right");
+const filterImg = document.querySelectorAll('.container-right img');
+containerImg[0].classList.add ("active", "first");
 containerImg[title.length-1].classList.add ("last");
 
 for (i=0 ; i<=title.length-1; i++) {
     let image = `<img src="${items[i]}" alt="">`;
+    let h1 = `<h1>${title[i]}</h1>`;
+    let paragraph = `<p>${text[i]}</p>`;
+    scritteImg[i].innerHTML = scritteImg[i].innerHTML + h1 + paragraph;
     containerImg[i].innerHTML += image;
 }
+
+const nextButton = document.querySelector('.botton-down');
+const prevButton = document.querySelector('.botton-up');
+
+nextButton.addEventListener('click', function () {
+    const imageActive = document.querySelector('.active');
+    const filterActive = document.querySelector('.no-filter');
+    let classes = imageActive.classList;
+    let last=false;
+    for (i=0; i<=classes.length; i++) {
+        if (classes[i] == 'last') {
+            last = true;
+        }
+    }
+
+    if (last == false) {
+        imageActive.classList.remove("active");
+        filterActive.classList.remove("no-filter");
+        const imgNext = imageActive.nextElementSibling;
+        const filterNext = filterActive.nextElementSibling;
+        imgNext.classList.add("active");
+        filterNext.classList.add("no-filter");
+    } 
+});
+
+prevButton.addEventListener('click', function () {
+    const filterActive = document.querySelector('.no-filter');
+    const imageActive = document.querySelector('.active');
+    let classes = imageActive.classList;
+    let last=false;
+    for (i=0; i<=classes.length; i++) {
+        if (classes[i] == 'first') {
+            last = true;
+        }
+    }
+
+    if (last == false) {
+        imageActive.classList.remove("active");
+        filterActive.classList.remove("no-filter");
+        const imgPrev = imageActive.previousElementSibling;
+        const filterPrev = filterActive.previousElementSibling;
+        imgPrev.classList.add("active");
+        filterPrev.classList.add("no-filter");
+    } 
+});
+

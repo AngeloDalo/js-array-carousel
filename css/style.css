@@ -75,3 +75,12 @@
 .container-right div i {
     font-size: 1.5em;
 }
+
+.container-right .no-filter {
+    filter: grayscale(0%);
+    border: 3px solid white;
+}
+
+.container-right img {
+    filter: grayscale(100%);
+}
