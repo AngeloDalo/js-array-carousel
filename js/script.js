@@ -28,3 +28,14 @@ const text = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
+
+
+const containerLeft = document.querySelector (".container-left");
+const containerImg = document.querySelectorAll (".container-img");
+containerImg[0].classList.add ("active");
+containerImg[title.length-1].classList.add ("last");
+
+for (i=0 ; i<=title.length-1; i++) {
+    let image = `<img src="${items[i]}" alt="">`;
+    containerImg[i].innerHTML += image;
+}
