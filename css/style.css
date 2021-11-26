@@ -66,13 +66,15 @@
 .botton-up {
     top: 2em;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    z-index: 1;
 }
 
 .botton-down {
     top: 90%;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    z-index: 1;
 }
 
 .container-right div i {

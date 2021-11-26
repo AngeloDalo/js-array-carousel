@@ -37,28 +37,15 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-/*
-const containerRight = document.querySelectorAll (".container-right");
-const filterImg = document.querySelectorAll('.container-right img');
-containerImg[0].classList.add ("active", "first");
-containerImg[title.length-1].classList.add ("last");
-
-for (i=0 ; i<=title.length-1; i++) {
-    let image = `<img src="${items[i]}" alt="">`;
-    let h1 = `<h1>${title[i]}</h1>`;
-    let paragraph = `<p>${text[i]}</p>`;
-    let scritte = `<div class="scritte"> ${h1} ${paragraph} </div>`
-    console.log(scritte);
-    containerImg[i].innerHTML += image;
-    containerImg[i].innerHTML += scritte;
-}
-/** */
 
 const containerLeft = document.querySelector (".container-left");
+const containerRight = document.querySelector (".container-right");
 for (let i=0; i<items.length; i++) {
     let classElement = "";
+    let classElementFilter ="";
     if (i==0) {
         classElement = "active first";
+        classElementFilter = "no-filter"
     } else {
         if (i==items.length-1) {
             classElement = "last";
@@ -73,7 +60,10 @@ for (let i=0; i<items.length; i++) {
             <p>${text[i]}</p>
         </div>
     `;
+
+    const contentFilter = `<img class="${classElementFilter}" src="${items[i]}" alt="">`;
     containerLeft.innerHTML += content;
+    containerRight.innerHTML += contentFilter;
 }
 
 const nextButton = document.querySelector('.botton-down');
