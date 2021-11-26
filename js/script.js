@@ -37,9 +37,7 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-
-const containerLeft = document.querySelector (".container .container-left");
-const containerImg = document.querySelectorAll (".container-left .container-img");
+/*
 const containerRight = document.querySelectorAll (".container-right");
 const filterImg = document.querySelectorAll('.container-right img');
 containerImg[0].classList.add ("active", "first");
@@ -53,6 +51,29 @@ for (i=0 ; i<=title.length-1; i++) {
     console.log(scritte);
     containerImg[i].innerHTML += image;
     containerImg[i].innerHTML += scritte;
+}
+/** */
+
+const containerLeft = document.querySelector (".container-left");
+for (let i=0; i<items.length; i++) {
+    let classElement = "";
+    if (i==0) {
+        classElement = "active first";
+    } else {
+        if (i==items.length-1) {
+            classElement = "last";
+        }
+    }
+
+    const content = `
+    <div class="container-img ${classElement}">
+        <img src="${items[i]}" alt="">
+        <div class ="scritte">
+            <h3>${title[i]}</h3>
+            <p>${text[i]}</p>
+        </div>
+    `;
+    containerLeft.innerHTML += content;
 }
 
 const nextButton = document.querySelector('.botton-down');
